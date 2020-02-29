@@ -1,0 +1,1 @@
+2020-02-29 Log{level=INFO, message='Inicjacja znowu udana'}

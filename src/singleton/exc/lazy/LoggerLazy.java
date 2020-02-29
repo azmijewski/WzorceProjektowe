@@ -19,7 +19,7 @@ public class LoggerLazy {
     }
     public void saveLog(Log log) {
         try (FileWriter  fileWriter = new FileWriter("log.txt");){
-            fileWriter.write(LocalDate.now().toString() + " " + log + "\n");
+            fileWriter.append(LocalDate.now().toString()).append(" ").append(String.valueOf(log)).append("\n");
             fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
