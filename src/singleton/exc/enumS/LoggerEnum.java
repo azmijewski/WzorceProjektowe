@@ -1,4 +1,4 @@
-package singleton.exc.lazy;
+package singleton.exc.enumS;
 
 import singleton.log.Log;
 
@@ -6,16 +6,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class FileConnectionProvider {
-    private static FileConnectionProvider instance;
-    private FileConnectionProvider()  {
+public enum LoggerEnum {
+    INSTANCE;
+    private LoggerEnum(){
 
-    }
-    public static FileConnectionProvider getInstance(){
-        if (instance == null){
-            instance = new FileConnectionProvider();
-        }
-        return instance;
     }
     public void saveLog(Log log) {
         try (FileWriter  fileWriter = new FileWriter("log.txt");){

@@ -1,4 +1,4 @@
-package singleton.exc.enumS;
+package singleton.exc.pugh;
 
 import singleton.log.Log;
 
@@ -6,10 +6,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public enum  FileConnectionProviderEnum {
-    INSTANCE;
-    private FileConnectionProviderEnum(){
+public class LoggerPugh {
 
+
+    private static class FileConnectionProviderHolder{
+        private static final LoggerPugh INSTANCE = new LoggerPugh();
+    }
+    private LoggerPugh(){
+
+    }
+    public static LoggerPugh getInstance(){
+        return FileConnectionProviderHolder.INSTANCE;
     }
     public void saveLog(Log log) {
         try (FileWriter  fileWriter = new FileWriter("log.txt");){
@@ -19,4 +26,5 @@ public enum  FileConnectionProviderEnum {
             e.printStackTrace();
         }
     }
+
 }

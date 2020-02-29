@@ -1,4 +1,4 @@
-package singleton.exc.pugh;
+package singleton.exc.lazy;
 
 import singleton.log.Log;
 
@@ -6,17 +6,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class FileConnectionProviderBill {
-
-
-    private static class FileConnectionProviderHolder{
-        private static final FileConnectionProviderBill INSTANCE = new FileConnectionProviderBill();
-    }
-    private FileConnectionProviderBill(){
+public class LoggerLazy {
+    private static LoggerLazy instance;
+    private LoggerLazy()  {
 
     }
-    public static FileConnectionProviderBill getInstance(){
-        return FileConnectionProviderHolder.INSTANCE;
+    public static LoggerLazy getInstance(){
+        if (instance == null){
+            instance = new LoggerLazy();
+        }
+        return instance;
     }
     public void saveLog(Log log) {
         try (FileWriter  fileWriter = new FileWriter("log.txt");){
@@ -26,5 +25,4 @@ public class FileConnectionProviderBill {
             e.printStackTrace();
         }
     }
-
 }
