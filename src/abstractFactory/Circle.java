@@ -15,7 +15,7 @@ public class Circle implements GeometricShape {
     }
 
     @Override
-    public int circuit() {
+    public int perimeter() {
         return 2;
     }
 }

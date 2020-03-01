@@ -15,7 +15,7 @@ public class Line implements GeometricShape {
     }
 
     @Override
-    public int circuit() {
+    public int perimeter() {
         return 23;
     }
 

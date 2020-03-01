@@ -7,5 +7,5 @@ package abstractFactory;
 public interface GeometricShape {
     void draw();
     int area();
-    int circuit();
+    int perimeter();
 }

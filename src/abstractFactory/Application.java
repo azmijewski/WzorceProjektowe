@@ -26,7 +26,7 @@ public class Application {
 
         shape = factory.getShape(ShapeType.TRAPEZOID);
         shape.draw();
-        System.out.println(shape.circuit());
+        System.out.println(shape.perimeter());
 
     }
 }
